@@ -10,14 +10,17 @@ namespace LoggingPerformance.Octopus
         {
         }
 
-        public ActivityLogEntry(DateTimeOffset occurred, ActivityLogEntryCategory category, string message, string detail = null, int? percentage = null)
+        public ActivityLogEntry(string correlationId, DateTimeOffset occurred, ActivityLogEntryCategory category, string message, string detail = null, int? percentage = null)
         {
+            CorrelationId = correlationId;
             Occurred = occurred;
             Category = category;
             Message = message;
             Detail = detail;
             Percentage = percentage;
         }
+
+        public string CorrelationId { get; set; }
 
         [ProtoMember(1)]
         public DateTimeOffset Occurred { get; set; }

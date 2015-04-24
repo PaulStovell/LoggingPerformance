@@ -24,7 +24,7 @@ namespace LoggingPerformance.TestHarness
         {
             Timings.Time("Log an info message", delegate
             {
-                storage.Append(id, new ActivityLogEntry(DateTimeOffset.UtcNow, ActivityLogEntryCategory.Info, message));
+                storage.Append(id, new ActivityLogEntry(id, DateTimeOffset.UtcNow, ActivityLogEntryCategory.Info, message));
             });
         }
         
@@ -32,7 +32,7 @@ namespace LoggingPerformance.TestHarness
         {
             Timings.Time("Log an error", delegate
             {
-                storage.Append(id, new ActivityLogEntry(DateTimeOffset.UtcNow, ActivityLogEntryCategory.Error, message));
+                storage.Append(id, new ActivityLogEntry(id, DateTimeOffset.UtcNow, ActivityLogEntryCategory.Error, message));
             });
         }
 
@@ -40,7 +40,7 @@ namespace LoggingPerformance.TestHarness
         {
             Timings.Time("Log a progress entry", delegate
             {
-                storage.Append(id, new ActivityLogEntry(DateTimeOffset.UtcNow, ActivityLogEntryCategory.Updated, message, percentage: progress));
+                storage.Append(id, new ActivityLogEntry(id, DateTimeOffset.UtcNow, ActivityLogEntryCategory.Updated, message, percentage: progress));
             });
         }
 

@@ -13,7 +13,7 @@
         {
             log.Info("Begin deployment XYZ");
 
-            for (var i = 0; i < 1; i++)
+            for (var i = 0; i < 2; i++)
             {
                 DeployToMachine(i);
             }
@@ -25,15 +25,15 @@
             {
                 child.Info("Deploying to machine " + machineId);
 
-                child.Info("Uploading package");
+                child.Info("Uploading package <xyz> to <abc>");
                 for (var j = 0; j < 100; j++)
                 {
-                    child.Progress(j, "Uploading");
+                    child.Progress(j, "Uploading...");
                 }
 
-                child.Info("Running a script");
+                child.Info("Running script \"foo\"");
 
-                for (var i = 0; i < 1000; i++)
+                for (var i = 0; i < 100000; i++)
                 {
                     child.Info("Script output line " + i);
                 }
