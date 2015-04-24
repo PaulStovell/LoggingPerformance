@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="EncodedLogStorage.cs" />
     <Compile Include="Encoders\ILogEncoder.cs" />
+    <Compile Include="Encoders\PaulJArrayEncoder.cs" />
     <Compile Include="Encoders\PaulJObjectEncoder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -31,8 +31,6 @@ namespace EncodingPerformance.Encoders
                     }
                 }
             }
-
-            yield break;
         }
     }
 }
