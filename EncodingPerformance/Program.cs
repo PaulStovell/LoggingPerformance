@@ -15,6 +15,7 @@ namespace EncodingPerformance
         {
             var encoders = new ILogEncoder[]
             {
+                new PaulJArrayFastEncoder(),
                 new PaulJArrayEncoder(),
                 new PaulJObjectEncoder(),
                 new XmlLogEncoder()
