@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C22ADD0-6359-441A-B63E-F7A20B17DBE1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LoggingPerformance</RootNamespace>
+    <AssemblyName>LoggingPerformance</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DbUp">
+      <HintPath>..\packages\dbup.3.2.1\lib\NET35\DbUp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Approaches\Approach0\Approach0.cs" />
+    <Compile Include="Approaches\Approach0\InMemoryLogStorage.cs" />
+    <Compile Include="Approaches\Approach1\ActivityLogApproach1.cs" />
+    <Compile Include="Approaches\Approach1\ActivityLogApproach1Map.cs" />
+    <Compile Include="Approaches\Approach1\Approach1.cs" />
+    <Compile Include="Approaches\Approach1\RelationalServerLogStorage.cs" />
+    <Compile Include="Approaches\Approach3\ActivityLogApproach2.cs" />
+    <Compile Include="Approaches\Approach3\ActivityLogApproach2Map.cs" />
+    <Compile Include="Approaches\Approach3\Approach3.cs" />
+    <Compile Include="Approaches\Approach3\RelationalServerLogStorage.cs" />
+    <Compile Include="Approaches\Approach2\ActivityLogApproach2.cs" />
+    <Compile Include="Approaches\Approach2\ActivityLogApproach2Map.cs" />
+    <Compile Include="Approaches\Approach2\Approach2.cs" />
+    <Compile Include="Approaches\Approach2\RelationalServerLogStorage.cs" />
+    <Compile Include="TestHarness\Approach.cs" />
+    <Compile Include="TestHarness\DatabaseMigrator.cs" />
+    <Compile Include="TestHarness\IntegrationTestDatabase.cs" />
+    <Compile Include="TestHarness\Log.cs" />
+    <Compile Include="TestHarness\Renderer.cs" />
+    <Compile Include="TestHarness\TestDeployment.cs" />
+    <Compile Include="TestHarness\Timings.cs" />
+    <Compile Include="Tests.cs" />
+    <Compile Include="Octopus\ActivityLogEntry.cs" />
+    <Compile Include="Octopus\ActivityLogEntryCategory.cs" />
+    <Compile Include="Octopus\ActivityLogTreeNode.cs" />
+    <Compile Include="Octopus\IServerLogStorage.cs" />
+    <Compile Include="Octopus\Persistance\AmazingConverter.cs" />
+    <Compile Include="Octopus\Persistance\ColumnMapping.cs" />
+    <Compile Include="Octopus\Persistance\CommandParameters.cs" />
+    <Compile Include="Octopus\Persistance\ConditionBuilder.cs" />
+    <Compile Include="Octopus\Persistance\DatabaseTypeConverter.cs" />
+    <Compile Include="Octopus\Persistance\DocumentMap.cs" />
+    <Compile Include="Octopus\Persistance\IKeyAllocator.cs" />
+    <Compile Include="Octopus\Persistance\IProjectionMapper.cs" />
+    <Compile Include="Octopus\Persistance\IPropertyReaderWriter.cs" />
+    <Compile Include="Octopus\Persistance\IQueryBuilder.cs" />
+    <Compile Include="Octopus\Persistance\IRelationalStore.cs" />
+    <Compile Include="Octopus\Persistance\IRelationalTransaction.cs" />
+    <Compile Include="Octopus\Persistance\KeyAllocator.cs" />
+    <Compile Include="Octopus\Persistance\PropertyReaderFactory.cs" />
+    <Compile Include="Octopus\Persistance\PropertyReaderWriterDecorator.cs" />
+    <Compile Include="Octopus\Persistance\QueryBuilder.cs" />
+    <Compile Include="Octopus\Persistance\DelegateReaderWriter.cs" />
+    <Compile Include="Octopus\Persistance\RelationalJsonContractResolver.cs" />
+    <Compile Include="Octopus\Persistance\RelationalMappings.cs" />
+    <Compile Include="Octopus\Persistance\RelationalStore.cs" />
+    <Compile Include="Octopus\Persistance\RelationalTransaction.cs" />
+    <Compile Include="Octopus\Persistance\StringTooLongException.cs" />
+    <Compile Include="Octopus\Persistance\UniqueConstraintViolationException.cs" />
+    <Compile Include="Octopus\Persistance\UniqueRule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Approaches\Approach1\Approach1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestHarness\Setup.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Approaches\Approach2\Approach2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Approaches\Approach3\Approach3.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
