@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsvHelper">
+      <HintPath>..\packages\CsvHelper.2.13.0.0\lib\net40-client\CsvHelper.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
@@ -53,6 +56,7 @@
     <Compile Include="EncodedLogStorage.cs" />
     <Compile Include="Encoders\ILogEncoder.cs" />
     <Compile Include="Encoders\PaulJArrayEncoder.cs" />
+    <Compile Include="Encoders\PaulJArrayFastEncoder.cs" />
     <Compile Include="Encoders\PaulJObjectEncoder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
